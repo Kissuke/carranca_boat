@@ -1,0 +1,45 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.foto img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+}
+form {
+    margin: 20px;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
