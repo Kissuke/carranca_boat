@@ -28,7 +28,7 @@ body {
 }
 
 #cabecalho {
-    background-image: linear-gradient( to bottom, var(--cor01), var(--cor07));
+    background-image: linear-gradient( to bottom, var(--cor04), var(--cor07));
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
