@@ -28,16 +28,16 @@ body {
 }
 
 #cabecalho {
-    background-image: linear-gradient( to bottom, var(--cor04), #42549A);
+    background-image: linear-gradient(to bottom, var(--cor04), #42549A);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px; 
+    padding: 30px 30px;
 }
 
 .logo img {
-    height: 90px; 
+    height: 90px;
 }
 
 #menu ul {
@@ -59,7 +59,8 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px; /* Pequena distância do texto */
+    bottom: -2px;
+    /* Pequena distância do texto */
     width: 0;
     height: 2px;
     background-color: white;
@@ -67,7 +68,7 @@ body {
 }
 
 #menu ul li a:hover::after {
-        width: 100%;
+    width: 100%;
 }
 
 .social-icons {
@@ -81,6 +82,7 @@ body {
 }
 
 .social-icons a:hover {
+    transition: ease 0.3s;
     color: #ddd;
 }
 
@@ -107,45 +109,56 @@ body {
 }
 
 #boat {
-  position: relative;
-  background-color: var(--cor03);
-  max-width: 1000px;
-  height: 600px;
-  margin: auto;
-  background-image: url(../imagens/inicial.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+    position: relative;
+    background-color: var(--cor03);
+    max-width: 1000px;
+    height: 600px;
+    margin: auto;
+    background-image: url(../imagens/inicial.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 #boat::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(56, 75, 152, 0.9) 0%,   /* quase opaco no topo */
-    rgba(56, 75, 152, 0.6) 30%,  /* médio logo abaixo */
-    rgba(56, 75, 152, 0.2) 70%,  /* quase transparente */
-    rgba(56, 75, 152, 0) 100%    /* totalmente transparente no final */
-  );
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(56, 75, 152, 0.9) 0%,
+            /* quase opaco no topo */
+            rgba(56, 75, 152, 0.6) 30%,
+            /* médio logo abaixo */
+            rgba(56, 75, 152, 0.2) 70%,
+            /* quase transparente */
+            rgba(56, 75, 152, 0) 100%
+            /* totalmente transparente no final */
+        );
+    z-index: 0;
 }
 
-#boat > section {
-  position: relative;
-  z-index: 1; /* conteúdo acima da camada */
+#boat>section {
+    position: relative;
+    z-index: 1;
+    /* conteúdo acima da camada */
+
 }
 
 .container {
     display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  height: 100vh;           /* Altura de 100% da viewport */
-  text-align: center;      /* Garante alinhamento do texto */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100vh;
+    /* Altura de 100% da viewport */
+    text-align: center;
+    /* Garante alinhamento do texto */
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.223);
 }
 
 #boat h1 {
@@ -153,6 +166,7 @@ body {
     font-weight: bolder;
     font-size: 3em;
     margin-bottom: 230px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.492);
 }
 
 section {
@@ -162,6 +176,7 @@ section {
 
 h2 {
     font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.492);
 }
 
 p {
@@ -176,6 +191,8 @@ p {
     padding: 20px;
     border-radius: 16px;
     font-size: 1.3em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.43);
+    cursor: pointer;
 }
 
 button {
@@ -183,8 +200,120 @@ button {
     color: var(--cor05);
     padding: 10px;
     border-radius: 16px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.43);
+    cursor: pointer;
 }
 
+.projetos {
+    max-width: 1000px;
+    margin: auto;
+    background-color: var(--cor04);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.223);
+    padding: 40px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.projetos h2 {
+    margin-bottom: 30px;
+}
+
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    height: 200px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.card a {
+    align-self: flex-start;
+    background-color: var(--cor03);
+    padding: 6px 12px;
+    color: var(--cor05);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+.card a:hover {
+    background-color: var(--cor02);
+    color: #031445;
+    transition: ease 0.3s;
+}
+
+.card a:visited {
+    color: var(--cor07);
+}
+
+.card a:active {
+    color: var(--cor05);
+}
+
+#not {
+    background-image: url(../imagens/not.jpg);
+    max-width: 1000px;
+    height: 600px;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+footer {
+    background-color: var(--cor07);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.contact-info {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 200px;
+    flex-wrap: wrap;
+}
+
+.contact-info li a {
+    text-decoration: none;
+    color: var(--cor05);
+}
+
+.contact-info li a:hover {
+    transition: ease 0.3s;
+    color: #ddd;
+}
+
+footer p {
+    font-size: 1em;
+    margin: auto;
+}
+
+footer a{
+    color: var(--cor03);    
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -193,7 +322,8 @@ button {
     }
 
     #nav-list {
-        position: absolute;
+        position: fixed;
+        /* fixo na tela */
         top: 80px;
         right: 30px;
         background-color: var(--cor04);
@@ -201,11 +331,18 @@ button {
         width: 200px;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         opacity: 0;
         pointer-events: none;
         transform: translateY(-20px);
         transition: 0.3s ease;
+
+        max-height: 70vh;
+        /* limita altura a 70% da tela */
+        overflow-y: auto;
+        /* ativa rolagem vertical */
+        z-index: 1000;
+        /* garante que fique sobre outros elementos */
     }
 
     #nav-list.active {
@@ -214,4 +351,9 @@ button {
         transform: translateY(0);
     }
 
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
