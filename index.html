@@ -14,50 +14,68 @@
 <body>
     <!--cabecalho-->
     <header id="cabecalho">
-    <div class="logo">
-        <a href="index.html"><img src="imagens/CARRANCA-2 1.png" alt="Logo"></a>
-    </div>
+        <div class="logo">
+            <a href="index.html"><img src="imagens/CARRANCA-2 1.png" alt="Logo"></a>
+        </div>
 
-    <nav id="menu">
-        <ul id="nav-list">
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="pages/projetos.html">PROJETOS</a></li>
-            <li><a href="pages/eventos.html">EVENTOS</a></li>
-            <li><a href="pages/modalidades.html">MODALIDADES</a></li>
-            <li><a href="pages/entrar.html">ENTRAR</a></li>
-            <li><a href="pages/registro.html">REGISTRA-SE</a></li>
-        </ul>
-    </nav>
+        <nav id="menu">
+            <ul id="nav-list">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="pages/projetos.html">PROJETOS</a></li>
+                <li><a href="pages/eventos.html">EVENTOS</a></li>
+                <li><a href="pages/modalidades.html">MODALIDADES</a></li>
+                <li><a href="pages/entrar.html">ENTRAR</a></li>
+                <li><a href="pages/registro.html">REGISTRA-SE</a></li>
+            </ul>
+        </nav>
 
-    <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
 
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-    <script>
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('nav-list');
 
-    hamburger.addEventListener('click', () => {
-        navList.classList.toggle('active');
-    });
-</script>
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+        </script>
 
-</header>
+    </header>
 
     <main>
 
-            <section id="boat">
+        <div id="boat" class="container">
+            <section>
+
                 <h1>INSPIRANDO A PAIXÃO PELO ESPORTE</h1>
+
                 <button>FALE CONOSCO</button>
+
             </section>
+        </div>
+
+        <section>
+            <h2>SOBRE A CARRANCA BOAT</h2>
+
+            <p>A Carranca Boat é uma atividade de remada coletiva que se utiliza de embarcações decoradas com as famosas
+                carrancas, esculturas típicas do Rio São Francisco. As carrancas, que simbolizam a proteção e a força
+                das águas, são um elemento central desta atividade, que se tornou popular na região. A prática da
+                Carranca Boat une a tradição cultural à prática esportiva, proporcionando uma experiência única de
+                navegação e integração.</p>
+
+                <button class="grande">SAIBA MAIS DA NOSSA HISTORIA</button>
+
+        </section>
 
     </main>
 
