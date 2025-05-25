@@ -397,4 +397,8 @@ footer a{
     #boat h1 {
         margin-bottom: 40px;
     }
+
+     #boat {
+        background-position: right center;
+     }
 }
