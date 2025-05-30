@@ -1,10 +1,15 @@
 <?php
-require_once 'config.php';
+$host = '127.0.0.1';
+$db   = 'carranca_db';
+$user = 'root';
+$pass = 'admin098@!';  
+
+$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
 try {
-    $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+    $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Erro na conexão: " . $e->getMessage());
+} catch (PDOException $e) {
+    die("Erro de conexão: " . $e->getMessage());
 }
 ?>
