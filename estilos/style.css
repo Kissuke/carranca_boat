@@ -231,44 +231,6 @@ button {
     margin-bottom: 40px;
 }
 
-footer {
-    background-color: var(--cor07);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 40px;
-    margin-top: 40px;
-    justify-content: space-between;
-}
-
-.contact-info {
-    list-style: disc;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 200px;
-    flex-wrap: wrap;
-}
-
-.contact-info li a {
-    text-decoration: none;
-    color: var(--cor05);
-}
-
-.contact-info li a:hover {
-    transition: ease 0.3s;
-    color: #ddd;
-}
-
-footer p {
-    font-size: 1em;
-    margin: auto;
-}
-
-footer a{
-    color: var(--cor03);    
-}
 
 /* Responsivo */
 @media (max-width: 768px) {
