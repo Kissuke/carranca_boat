@@ -1,21 +1,37 @@
-<?php
-session_start();
-require 'conexao.php';
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+        <label>Senha:</label>
+        <input type="password" name="senha" required><br>
 
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$email]);
-    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        <button type="submit">Entrar</button>
+    </form>
 
-    if ($usuario && password_verify($senha, $usuario['senha'])) {
-        $_SESSION['usuario'] = $usuario;
-        echo json_encode(['status' => 'success', 'message' => 'Login realizado!']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Login inválido.']);
-    }
-}
-?>
+    <div id="mensagem"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            const response = await fetch('../admin/login.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('mensagem').innerText = result.message;
+        });
+    </script>
+</body>
+</html>
