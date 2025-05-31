@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+:root {
+    --cor01: #3A5491;
+    --cor02: #09EAFE;
+    --cor03: #031445;
+    --cor04: #272E59;
+    --cor05: #f9f9f9;
+    --cor06: #333;
+    --cor07: #42549A;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.492);
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.492);
+    margin-bottom: 40px;
+}
+
+p {
+    margin: 20px;
+    font-size: 1.6em;
+    margin-bottom: 40px;
+}
+
+#grup {
+    width: 100%;
+    max-width: 40vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
+}
+
+#grupo {
+    background: linear-gradient(to bottom, 
+                            var(--cor07) 0%, 
+                            var(--cor07) 50%, 
+                            var(--cor03) 50%, 
+                            var(--cor03) 100%);
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.itema {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 1/1; /* Mantém quadrado em qualquer tela */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: auto;
+}
+
+/* Imagem ocupa tudo */
+.itema img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#pai {
+    background-color: var(--cor03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#cr {
+    padding-top: 40px;
+    margin-bottom: 0;
+}
+
+/* Seção principal */
+.about {
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    gap: 60px;
+}
+
+/* Estrutura de cada bloco */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #272e59;
+    border-radius: 16px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+/* Inverte para o segundo */
+.item.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Imagem */
+.item .img {
+    flex: 1 1 400px;
+}
+
+.item .img img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Texto */
+.item .text {
+    flex: 1 1 400px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .item.reverse {
+        flex-direction: column;
+    }
+
+}
