@@ -1,40 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilos/registro.css">
+
 </head>
+
 <body>
-    <h1>Registro</h1>
-    <form id="registroForm">
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
 
-        <label>Senha:</label>
-        <input type="password" name="senha" required><br>
+    <div class="container">
 
-        <button type="submit">Registrar</button>
-    </form>
+        <div class="left">
 
-    <div id="mensagem"></div>
+            <h2>Bem-vindo ao<br>Carranca Dragon Boat!</h2>
 
-    
-    <script>
-        document.getElementById('registroForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+            <p>Prepare-se para remar com garra, união e espírito de equipe! Aqui, cada braçada é força, cultura e
+                superação. Vamos juntos nessa jornada!</p>
 
-            const formData = new FormData(this);
+            <div class="social-icons">
 
-            const response = await fetch('../admin/register.php', {
-                method: 'POST',
-                body: formData
-            });
+                <a href="https://www.facebook.com/carrancaboat" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
 
-            const result = await response.json();
+                <a href="https://www.instagram.com/carrancaboat/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
 
-            document.getElementById('mensagem').innerText = result.message;
-        });
-    </script>
+                <a href="http://wa.me//5575988291996" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <h1>REGISTRA-SE</h1>
+
+            <form id="registroForm">
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" required>
+
+                <label for="confirmarSenha">Confirmar senha:</label>
+                <input type="password" name="confirmarSenha" required>
+
+                <button type="submit">Registrar</button>
+
+            </form>
+
+            <div id="mensagem"></div>
+
+            <p class="link-associado">
+                Já é membro? <a href="associado.html">Seja um associado</a>
+            </p>
+
+            <div class="voltar">
+
+                <button onclick="window.location.href='login.html'">Voltar</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/registro.js"></script>
+   
 </body>
+
 </html>

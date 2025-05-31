@@ -1,0 +1,199 @@
+ @charset "UTF-8";
+
+        :root {
+            --cor01: #3A5491;
+            --cor02: #09EAFE;
+            --cor03: #031445;
+            --cor04: #272E59;
+            --cor05: #f9f9f9;
+            --cor06: #333;
+            --cor07: #42549A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background: linear-gradient(to bottom, 
+                            var(--cor01) 0%, 
+                            var(--cor01) 50%, 
+                            var(--cor03) 50%, 
+                            var(--cor03) 100%);
+            color: white;
+        }
+
+        .container {
+            margin: auto;
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .left {
+            flex: 1;
+            background-color: #0D1842;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .left h2 {
+            margin-bottom: 20px;
+        }
+
+        .left p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .right {
+            flex: 1;
+            background-color: #1A2A64;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #002B87;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #1c3baf;
+        }
+
+        #mensagem {
+            margin-top: 10px;
+            color: yellow;
+        }
+
+        .link-associado {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .link-associado a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        .link-associado a:hover {
+            text-decoration: underline;
+        }
+
+        .voltar {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .voltar button {
+            background-color: #444;
+            padding: 8px 20px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .voltar button:hover {
+            background-color: #666;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 95%;
+                height: auto;
+            }
+
+            .left,
+            .right {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .left p {
+                font-size: 13px;
+            }
+
+            form {
+                align-items: center;
+            }
+
+            input,
+            button {
+                width: 100%;
+            }
+        }
