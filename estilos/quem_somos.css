@@ -38,48 +38,49 @@ p {
     height: auto;
     display: block;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
 }
 
 #grupo {
-    background: linear-gradient(to bottom, 
-                            var(--cor07) 0%, 
-                            var(--cor07) 50%, 
-                            var(--cor03) 50%, 
-                            var(--cor03) 100%);
+    background: linear-gradient(to bottom,
+            var(--cor07) 0%,
+            var(--cor07) 50%,
+            var(--cor03) 50%,
+            var(--cor03) 100%);
     padding: 20px;
     text-align: center;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
 }
 
 .itema {
-  position: relative;
-  width: 80%;
-  aspect-ratio: 1/1; /* Mantém quadrado em qualquer tela */
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  margin: auto;
+    position: relative;
+    width: 80%;
+    aspect-ratio: 1/1;
+    /* Mantém quadrado em qualquer tela */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
 }
 
 /* Imagem ocupa tudo */
 .itema img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 #pai {
     background-color: var(--cor03);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #cr {
@@ -104,6 +105,9 @@ p {
     border-radius: 16px;
     padding: 30px;
     flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* Inverte para o segundo */
@@ -114,6 +118,8 @@ p {
 /* Imagem */
 .item .img {
     flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
 }
 
 .item .img img {
@@ -127,6 +133,21 @@ p {
     flex: 1 1 400px;
 }
 
+
+.oculto {
+    display: inline;
+    max-width: none;
+    opacity: 1;
+    overflow: visible;
+    transition: none;
+}
+
+.botao {
+    display: none;
+    color: var(--cor02);
+    cursor: pointer;
+    text-decoration: underline;
+}
 /* Responsivo */
 @media (max-width: 768px) {
     .item {
@@ -136,6 +157,36 @@ p {
 
     .item.reverse {
         flex-direction: column;
+    }
+
+    .oculto {
+        display: inline-block;
+        /* para poder controlar max-width */
+        opacity: 0;
+        transition: max-width 0.3s ease, opacity 0.3s ease;
+    }
+
+    .oculto.ativo {
+        max-width: 500px;
+        /* ou o que precisar */
+        opacity: 1;
+    }
+
+    .botao {
+        display: inline;
+    }
+
+    .item .img {
+        flex: none;
+    }
+
+    .item .img img {
+        max-width: 300px;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 30px;
     }
 
 }

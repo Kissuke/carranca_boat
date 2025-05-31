@@ -120,10 +120,19 @@
                 <div class="item">
                     <div class="text">
                         <h2>MISSÃO</h2>
-                        <p>
-                            Promover o Dragon Boat no Rio São Francisco. A Carranca Dragon Boat tem como missão tornar o
-                            esporte acessível a todos, oferecendo experiências de lazer e competição para iniciantes e
-                            praticantes.
+                        <p class="visivel">
+                            Promover o Dragon Boat no Rio São Francisco.
+
+                            <span class="oculto">
+                                A Carranca Dragon Boat tem como missão tornar o
+                                esporte acessível a todos, oferecendo experiências de lazer e competição para iniciantes
+                                e
+                                praticantes.
+                            </span>
+
+                            <span class="botao" onclick="toggleTexto(this)">Ler mais</span>
+
+
                         </p>
                     </div>
                     <div class="img">
@@ -137,10 +146,18 @@
                         <img src="../galeria/a.jpg" alt="Valores">
                     </div>
                     <div class="text">
+
                         <h2>VALORES</h2>
-                        <p>
-                            O Dragon Boat é união. Na Carranca Dragon Boat, valorizamos a cooperação, a boa comunicação
-                            e o respeito entre todos. Juntos, remamos mais longe.
+
+                        <p class="visivel"> O Dragon Boat é união.
+
+                            <span class="oculto">
+                                Na Carranca Dragon Boat, valorizamos a cooperação, a boa comunicação
+                                e o respeito entre todos. Juntos, remamos mais longe.
+                            </span>
+
+                            <span class="botao" onclick="toggleTexto(this)">Ler mais</span>
+
                         </p>
                     </div>
 
@@ -148,6 +165,20 @@
             </section>
 
             <script src="../js/script.js"></script>
+
+            <script>
+                function toggleTexto(botao) {
+                    const textoOculto = botao.parentElement.querySelector('.oculto');
+
+                    if (textoOculto.classList.contains('ativo')) {
+                        textoOculto.classList.remove('ativo');
+                        botao.textContent = 'Ler mais';
+                    } else {
+                        textoOculto.classList.add('ativo');
+                        botao.textContent = 'Ler menos';
+                    }
+                }
+            </script>
 
         </main>
 
