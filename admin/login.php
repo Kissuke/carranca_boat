@@ -1,37 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <h2>Login</h2>
-    <form id="loginForm">
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
+<?php
+session_start();
+header('Content-Type: application/json');
 
-        <label>Senha:</label>
-        <input type="password" name="senha" required><br>
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode(['success' => false, 'message' => 'Método inválido.']);
+    exit;
+}
 
-        <button type="submit">Entrar</button>
-    </form>
+$email = $_POST['email'] ?? '';
+$senha = $_POST['senha'] ?? '';
 
-    <div id="mensagem"></div>
+if (!$email || !$senha) {
+    echo json_encode(['success' => false, 'message' => 'Email e senha são obrigatórios.']);
+    exit;
+}
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+$host = '127.0.0.1';
+$db   = 'carranca_db';
+$user = 'root';
+$pass = 'admin098@!';
 
-            const formData = new FormData(this);
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            const response = await fetch('../admin/login.php', {
-                method: 'POST',
-                body: formData
-            });
+    $stmt = $pdo->prepare("SELECT id, senha FROM usuarios WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
 
-            const result = await response.json();
-            document.getElementById('mensagem').innerText = result.message;
-        });
-    </script>
-</body>
-</html>
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$usuario || !password_verify($senha, $usuario['senha'])) {
+        echo json_encode(['success' => false, 'message' => 'E-mail ou senha inválidos.']);
+        exit;
+    }
+
+    // testa se foi essa porra
+    $_SESSION['usuario_id'] = $usuario['id'];
+    $_SESSION['email'] = $email;
+
+    echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
+
+} catch (PDOException $e) {
+    echo json_encode(['success' => false, 'message' => 'Erro no banco: ' . $e->getMessage()]);
+}
+?>
